@@ -1,4 +1,4 @@
-#P1. django
+# P1. django
 
 **프로젝트 파일 명
 - Django 에서 사용중인 이름 피한다. 
@@ -36,17 +36,16 @@ path('polls/<pageName>/', views.reqArchive, {'name':'argv'})
 이렇게 전달 된다. views.reqArchive(requtest , pageName, name='argv')
 
 
-======
-#P2
+
+# P2
 *database - sqlite 사용할 예정
 *DRY 철학 : 반복하지 말것.
 *고유한 개념/ 데이터는 단 한 번 단 한 곳에 존재 하도록 한다. 
 
 
- 
-======
-#P3
->>template / polls / index.html 추가
+
+# P3
+> template / polls / index.html 추가
 
 *view 공개 인터페이스
 *django는 요청된 URL 조사하여 view 선택 
@@ -57,24 +56,24 @@ mysite.urls의 urlpatterns 변수 찾고
 polls/ 찾고 남은 텍스트 34/를 전달하고 처리 진행.
 > detail() 뷰함수 호출됨.
 
----
+
 **템플릿 네임스페이싱 
 Django 는 이름이 일치하는 첫번째 템플릿을 선택하므로 
 동일한 이름이 다른 어플리케이션에 있으면 구분을 핤없으므로
 이름공간으로 구분하게 된다.
 
----
+
 **render()
 *index() 뷰를 단축기능으로 작성
 *render(request 객체 , 템플릿 이름, (선택)context 사전형 객체)
 
----
+
 **get_object_or_404() : 객체가 존재하지 않을때 get() 사용하여 예외 발생.
 (Django모델을 첫째인자, ) > 객체 존재안하면 Http404예외
 유사 함수로
 get_list_or_404() 함수 > get대신 filter()쓴다. 리스트 빈경우 Http404 예외발생
 
-===
-#P4
+
+# P4
 
 
