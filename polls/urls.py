@@ -3,7 +3,9 @@ from . import views
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.urls import path
 
+from . import views
 from .models import Choice, Question
 
 app_name = 'polls'
@@ -14,7 +16,6 @@ urlpatterns = [
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
-
 # ...
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
